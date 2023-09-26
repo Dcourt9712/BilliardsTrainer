@@ -20,4 +20,5 @@ from main_app import views as MA_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MA_views.home, name = 'home'),
+    path('drills/',MA_views.drills,name ='drills')
 ]
