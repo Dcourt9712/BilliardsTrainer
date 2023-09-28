@@ -5,8 +5,26 @@ from django.http import HttpResponse
 def home(request):
     return render(request,'main_app/home.html')
 
+#Drills
 def drills(request):
-    drills = {'1':"Images/billiards.jpg",}
-    
-   
-    return render(request,'main_app/drills.html',drills)
+    return render(request,'main_app/Drills/drills.html')
+
+def Fundamentals(request):
+    return render(request,'main_app/Drills/fundamentals.html')
+
+def Shotmaking(request):
+    return render(request,'main_app/Drills/Shotmaking.html')
+
+def Kicking(request):
+    return render(request,'main_app/Drills/kicking.html')  
+
+def Banking(request):
+    return render(request,'main_app/Drills/banking.html')
+      
+def Safety(request):
+    return render(request,'main_app/Drills/Safety.html')
+
+def Jumping(request):
+    return render(request,'main_app/Drills/Jumping.html')         
+
+

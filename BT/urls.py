@@ -20,5 +20,15 @@ from main_app import views as MA_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MA_views.home, name = 'home'),
-    path('drills/',MA_views.drills,name ='drills')
+    #Drills
+    path('drills/',MA_views.drills,name ='drills'),
+    path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),
+    path('drills/Shotmaking', MA_views.Shotmaking,name ='Shotmaking'),
+    path('drills/Kicking', MA_views.Kicking,name ='Kicking'),
+    path('drills/Banking', MA_views.Banking,name ='Banking'),
+    path('drills/Safety', MA_views.Safety,name ='Safety'),
+    path('drills/Jumping', MA_views.Jumping,name ='Jumping')
+    
+    
+    
 ]
