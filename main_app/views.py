@@ -26,7 +26,7 @@ def Safety(request):
 
 def Jumping(request):
     return render(request,'main_app/Drills/Jumping.html')
-         
+#fundamentals   
 def stop(request):
     return render(request,'main_app/Drills/fundamentals/stop.html')
 
@@ -37,3 +37,7 @@ def draw(request):
     return render(request,'main_app/Drills/fundamentals/draw.html')   
 
 
+
+#shotmaking
+def mill(request):
+    return render(request,'main_app/Drills/shotmaking/mill.html') 

@@ -30,7 +30,8 @@ urlpatterns = [
     path('drills/Jumping', MA_views.Jumping,name ='Jumping'),
     path('drills/fundamentals/stop', MA_views.stop,name ='stop'),
     path('drills/fundamentals/follow', MA_views.follow,name ='follow'),
-    path('drills/fundamentals/draw', MA_views.draw,name ='draw')
+    path('drills/fundamentals/draw', MA_views.draw,name ='draw'),
+     path('drills/shotmaking/mill', MA_views.mill,name ='mill')
     
     
     
