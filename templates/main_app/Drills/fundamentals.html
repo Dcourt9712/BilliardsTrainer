@@ -1,7 +1,53 @@
 <html>
     <head>
+        {% load static %}
+        <link rel="stylesheet" href ="{%static 'Drill_CSS_pages/fundamentals.css' %}">
+        <h1 style="text-align: center;">Welcome to Fundamentals</h1>
         <body>
-                <h1>Welcome to Fundamentals</h1>
+            <button class="button">filter</button>
+            <div class = "grid-container">
+                <div class = "item1">
+                    <h2 class="h2">Stop</h2>
+                    <a href="fundamentals/stop">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/stop.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+                <div class = "item2">
+                    <h2 class="h2">Follow</h2>
+                    <a href="fundamentals/follow">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/follow.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+                <div class = "item3">
+                    <h2 class="h2">Draw</h2>
+                    <a href="fundamentals/draw">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/draw.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+             
+                <div class = "item4">
+                    <h2 class="h2">Mighty X Stun</h2>
+                    <a href="mightyx_stun">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/Mightyx_stun.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+                <div class = "item5">
+                    <h2 class="h2">Mighty X follow</h2>
+                    <a href="mightyx_follow">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/Mightyx_follow.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+                <div class = "item6">
+                    <h2 class="h2">Mighty X Draw</h2>
+                    <a href="mightyx_draw">
+                    <img src="{%static 'Images/Drill_builder/fundamentals/Mightyx_draw.png'%}" class = "pop-out" alt="">
+                    </a>
+                </div>
+              
+             
+             
+            </div>
+        
         </body>
         
     </head>

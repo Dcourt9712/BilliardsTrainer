@@ -25,6 +25,15 @@ def Safety(request):
     return render(request,'main_app/Drills/Safety.html')
 
 def Jumping(request):
-    return render(request,'main_app/Drills/Jumping.html')         
+    return render(request,'main_app/Drills/Jumping.html')
+         
+def stop(request):
+    return render(request,'main_app/Drills/fundamentals/stop.html')
+
+def follow(request):
+    return render(request,'main_app/Drills/fundamentals/follow.html')
+
+def draw(request):
+    return render(request,'main_app/Drills/fundamentals/draw.html')   
 
 
