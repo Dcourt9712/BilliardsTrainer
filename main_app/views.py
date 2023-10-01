@@ -40,4 +40,7 @@ def draw(request):
 
 #shotmaking
 def mill(request):
-    return render(request,'main_app/Drills/shotmaking/mill.html') 
+    return render(request,'main_app/Drills/shotmaking/mill.html')
+
+def everest(request):
+    return render(request,'main_app/Drills/shotmaking/everest.html')  
