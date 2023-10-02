@@ -43,4 +43,16 @@ def mill(request):
     return render(request,'main_app/Drills/shotmaking/mill.html')
 
 def everest(request):
-    return render(request,'main_app/Drills/shotmaking/everest.html')  
+    return render(request,'main_app/Drills/shotmaking/everest.html')
+
+def ladder(request):
+    return render(request,'main_app/Drills/shotmaking/ladder.html')
+
+def corner(request):
+    return render(request,'main_app/Drills/shotmaking/corner.html') 
+
+def train (request):
+    return render(request,'main_app/Drills/shotmaking/train.html')
+           
+def follower(request):
+    return render(request,'main_app/Drills/shotmaking/follower.html')        

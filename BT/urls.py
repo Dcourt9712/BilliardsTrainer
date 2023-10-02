@@ -32,7 +32,12 @@ urlpatterns = [
     path('drills/fundamentals/follow', MA_views.follow,name ='follow'),
     path('drills/fundamentals/draw', MA_views.draw,name ='draw'),
     path('drills/shotmaking/mill', MA_views.mill,name ='mill'),
-    path('drills/shotmaking/everest', MA_views.everest,name ='everest')
+    path('drills/shotmaking/everest', MA_views.everest,name ='everest'),
+    path('drills/shotmaking/ladder', MA_views.ladder,name ='ladder'),
+    path('drills/shotmaking/corner', MA_views.corner,name ='corner'),
+    path('drills/shotmaking/train', MA_views.train,name ='train'),
+    path('drills/shotmaking/follower', MA_views.follower,name ='follower'),
+
     
     
     
