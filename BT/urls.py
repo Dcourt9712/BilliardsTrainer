@@ -22,7 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('map_view/', include("map_view.urls", namespace="map_view")),
-    path('', MA_views.home, name = 'home'),
+    path('', MA_views.welcome, name = 'welcome'),
+    path('home/', MA_views.home, name = 'home'),
 ]
 
 if settings.DEBUG:
