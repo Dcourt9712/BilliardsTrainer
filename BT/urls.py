@@ -14,13 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from main_app import views as MA_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MA_views.home, name = 'home'),
-    #Drills
+    path('map_view/', include("map_view.urls", namespace="map_view")),
+    path('', MA_views.welcome, name = 'welcome'),
+  
+     #Drills
     path('drills/',MA_views.drills,name ='drills'),
     path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),
     path('drills/Shotmaking', MA_views.Shotmaking,name ='Shotmaking'),
@@ -36,9 +40,9 @@ urlpatterns = [
     path('drills/shotmaking/ladder', MA_views.ladder,name ='ladder'),
     path('drills/shotmaking/corner', MA_views.corner,name ='corner'),
     path('drills/shotmaking/train', MA_views.train,name ='train'),
-    path('drills/shotmaking/follower', MA_views.follower,name ='follower'),
+    path('drills/shotmaking/follower', MA_views.follower,name ='follower')
 
-    
-    
-    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

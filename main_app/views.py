@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
-def home(request):
-    return render(request,'main_app/home.html')
-
+def welcome(request):
+    return render(request, 'main_app/welcome.html')
+  
+  
 #Drills
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
@@ -55,4 +56,5 @@ def train (request):
     return render(request,'main_app/Drills/shotmaking/train.html')
            
 def follower(request):
-    return render(request,'main_app/Drills/shotmaking/follower.html')        
+    return render(request,'main_app/Drills/shotmaking/follower.html')   
+

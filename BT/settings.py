@@ -124,3 +124,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [STATIC_DIR]# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+  API_KEY_DIR = os.path.join(BASE_DIR, "api-key.ini")
+  API_KEY_FILE = open(API_KEY_DIR)
+  API_KEY = API_KEY_FILE.read()
+except:
+  API_KEY = ""
