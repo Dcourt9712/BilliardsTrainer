@@ -1,0 +1,12 @@
+{% extends "main_app/base.html" %}
+{% block title %}Profile page{% endblock %}
+
+{% block content %}
+	<h1>Hello {{prof.username}}</h1>
+	<p>You have completed 
+		{%for stat in prof.stats_set.all%}
+			{{stat.drillsComplete}}
+		{% endfor %}
+	 Drills
+	</p>
+{% endblock %}

@@ -23,8 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('map_view/', include("map_view.urls", namespace="map_view")),
     path('', MA_views.welcome, name = 'welcome'),
+    
+    #PersistantData
+    path("<int:id>", MA_views.profile, name="profile"),
+    path("create/", MA_views.create, name="create"),
   
-     #Drills
+    #Drills
     path('drills/',MA_views.drills,name ='drills'),
     path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),
     path('drills/Shotmaking', MA_views.Shotmaking,name ='Shotmaking'),
@@ -41,7 +45,6 @@ urlpatterns = [
     path('drills/shotmaking/corner', MA_views.corner,name ='corner'),
     path('drills/shotmaking/train', MA_views.train,name ='train'),
     path('drills/shotmaking/follower', MA_views.follower,name ='follower')
-
 ]
 
 if settings.DEBUG:
