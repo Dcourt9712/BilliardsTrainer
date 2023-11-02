@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import User, Stats
+from .models import Drill_data
 from .forms import CreateNewUser
+
 # Create your views here.
+
+
 
 def welcome(request):
     return render(request, 'main_app/welcome.html')
@@ -29,6 +33,8 @@ def create(response):
     return render(response, "main_app/create.html",{"form":form})
   
 #Drills
+
+
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
 
@@ -60,9 +66,15 @@ def draw(request):
     return render(request,'main_app/Drills/fundamentals/draw.html')   
 
 
-
 #shotmaking
 def mill(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/mill.html')
 
 def everest(request):
