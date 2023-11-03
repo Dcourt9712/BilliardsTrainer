@@ -78,17 +78,52 @@ def mill(request):
     return render(request,'main_app/Drills/shotmaking/mill.html')
 
 def everest(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/everest.html')
 
 def ladder(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/ladder.html')
 
 def corner(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/corner.html') 
 
 def train (request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/train.html')
            
 def follower(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/follower.html')   
 
