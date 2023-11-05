@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Add Message</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/message_board.css' %}">
+</head>
+<body>
+    <h2>Add a Message</h2>
+    <form method="post" action="{% url 'add_message' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'message_list' %}">Back to Message Board</a>
+</body>
+</html>
