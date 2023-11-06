@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,HttpResponseRedirect
-from .models import User, Stats
-from .forms import CreateNewUser, loginForm
+from .forms import CreateNewUser, loginForm, MessageForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
-=======
-from django.shortcuts import render
-from django.http import HttpResponse
 from .models import User, Stats, Message
-from .forms import CreateNewUser, MessageForm
-from django.shortcuts import render, redirect
 from .models import Drill_data
->>>>>>> 79646b893e15b89938c1df3b40c98ded2016a0fa
 
 # Create your views here.
 
@@ -43,7 +35,6 @@ def create(response):
         form = CreateNewUser()
     return render(response, "main_app/create.html",{"form":form})
 
-<<<<<<< HEAD
 #login
 def user_login(request):
     if request.method == "POST":
@@ -69,7 +60,6 @@ def user_login(request):
 def user_logout(request):
         logout(request)
         return redirect("/")
-=======
 
 def message_list(request):
     # Query the database for messages and pass them to the template
@@ -90,7 +80,6 @@ def add_message(request):
     context = {'form': form}
     return render(request, 'main_app/message_form.html', context)
 
->>>>>>> 79646b893e15b89938c1df3b40c98ded2016a0fa
 
 
 #Drills
