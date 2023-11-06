@@ -3,6 +3,16 @@ image-container {
 
 }
 
+body {
+  height: 100%;
+  background: rgb(26,46,26);
+  background: linear-gradient(180deg, rgba(26,46,26,1) 0%, rgba(16,28,16,1) 100%);
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   align-items: center;
   border: 1px solid #ddd;
