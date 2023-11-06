@@ -23,11 +23,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('map_view/', include("map_view.urls", namespace="map_view")),
     path('', MA_views.welcome, name = 'welcome'),
-    
+
     #PersistantData
     path("<int:id>", MA_views.profile, name="profile"),
     path("create/", MA_views.create, name="create"),
-  
+    path('message-board/', MA_views.message_list, name='message_board'),
+    path('add-message/', MA_views.add_message, name='add_message'),
+    path('message-board/', MA_views.message_list, name='message_list'),
+
     #Drills
     path('drills/',MA_views.drills,name ='drills'),
     path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),
