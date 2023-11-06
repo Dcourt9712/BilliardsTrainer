@@ -3,7 +3,11 @@ from django.http import HttpResponse
 from .models import User, Stats, Message
 from .forms import CreateNewUser, MessageForm
 from django.shortcuts import render, redirect
+from .models import Drill_data
+
 # Create your views here.
+
+
 
 def welcome(request):
     return render(request, 'main_app/welcome.html')
@@ -52,6 +56,8 @@ def add_message(request):
 
 
 #Drills
+
+
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
 
@@ -83,22 +89,64 @@ def draw(request):
     return render(request,'main_app/Drills/fundamentals/draw.html')
 
 
-
 #shotmaking
 def mill(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/mill.html')
 
 def everest(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/everest.html')
 
 def ladder(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/ladder.html')
 
 def corner(request):
-    return render(request,'main_app/Drills/shotmaking/corner.html')
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/shotmaking/corner.html') 
 
 def train (request):
-    return render(request,'main_app/Drills/shotmaking/train.html')
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
 
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/shotmaking/train.html')
+           
 def follower(request):
-    return render(request,'main_app/Drills/shotmaking/follower.html')
+    if request.method == "POST":
+        username = request.POST["username"]
+        drill_name = request.POST["drill_name"]
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/shotmaking/follower.html')   
+

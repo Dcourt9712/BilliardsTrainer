@@ -2,7 +2,9 @@ body {font-family: 'Courier Prime', monospace;}
 * {box-sizing: border-box;}
 
 body {
-
+  color: white;
+  background: rgb(26,46,26);
+  background: linear-gradient(180deg, rgba(26,46,26,1) 0%, rgba(16,28,16,1) 100%);
   margin: 0;
 }
 
@@ -25,7 +27,9 @@ ul.sidenav {
   margin: 0;
   padding: 0;
   width: 25%;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  background: rgb(20,40,20);
+  background: linear-gradient(180deg, rgba(15,25,15,1) 0%, rgba(5,17,5,1) 100%);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -33,19 +37,19 @@ ul.sidenav {
 
 ul.sidenav li a {
   display: block;
-  color: #000;
+  color: #fff;
   padding: 8px 16px;
   text-decoration: none;
 }
 
 ul.sidenav li a.active {
-  background-color: #9c07b6;
-  color: white;
+  background-color: rgb(37, 150, 37);
+  color: black;
 }
 
 ul.sidenav li a:hover:not(.active) {
   background-color: #555;
-  color: white;
+  color: black;
 }
 
 .div-container {
@@ -90,28 +94,28 @@ input[type=text], input[type=email], input[type=password], select, textarea {
 
 
 ::-webkit-input-placeholder { /* Edge */
-  color: #9c07b6;
+  color: rgba(15,25,15,1);
   font-family: 'Courier Prime', monospace;
 }
 
 :-ms-input-placeholder { /* Internet Explorer */
-  color: #9c07b6;
+  color: rgba(15,25,15,1);
   font-family: 'Courier Prime', monospace;
 }
 
 ::placeholder {
-  color: #9c07b6;
+  color: rgba(15,25,15,1);
   font-family: 'Courier Prime', monospace;
 }
 
 select.selection option,
 {
-  color: #9c07b6;
+  color: black;
   font-family: 'Courier Prime', monospace;
 }
 
 input, select{
-  color: #9c07b6;
+  color: black;
   font-family: 'Courier Prime', monospace;
 
 }
@@ -145,7 +149,7 @@ input, select{
   left: 0;
   height: 15px;
   width: 15px;
-  background-color: #fff;
+  background-color: #000;
 }
 
 /* On mouse-over, add a grey background color */
@@ -155,7 +159,8 @@ input, select{
 
 /* When the checkbox is checked, add a green background */
 .check-container input:checked ~ .checkmark {
-  background-color: #9c07b6;
+  background-color: rgb(23, 23, 23);
+  color: white;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -176,7 +181,7 @@ input, select{
   top: 5px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -217,7 +222,7 @@ input, select{
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -247,7 +252,7 @@ input:checked + .slider:before {
 
 button[type=submit] {
   background-color: #9c07b6;
-  color: white;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -260,7 +265,8 @@ button[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  color: white;
+  background-color: #333333;
   padding: 20px;
 }
 
@@ -281,13 +287,13 @@ table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #9c07b6;
+  background-color: black;
   color: white;
 }
 
 .selected {
-  background-color: #730786;
-  color: #FFF;
+  background-color: rgb(23, 23, 23);
+  color: white;
 }
 
 #payment-form {
