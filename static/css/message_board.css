@@ -67,7 +67,8 @@ a:hover {
 
 /* CSS for the body with a dark green background */
 .dark-green-bg {
-    background-color: #006400; /* Dark green color*/
+/*    background-color: #006400;  /* Lost but not forgotten Dark green color*/
+    background-color: linear-gradient(180deg, rgba(26,46,26,1) 0%, rgba(16,28,16,1) 100%);
     color: #000; /* White text color */
     padding: 20px;
     font-family: Arial, sans-serif;
