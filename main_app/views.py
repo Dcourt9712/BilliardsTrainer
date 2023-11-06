@@ -1,7 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse,HttpResponseRedirect
 from .models import User, Stats
-from .forms import CreateNewUser
+from .forms import CreateNewUser, loginForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate,login,logout
+from django.urls import reverse
+
 # Create your views here.
 
 def welcome(request):
@@ -13,7 +17,7 @@ def profile(response, id):
     return render(response, "main_app/profile.html", {"prof":prof})
 
 def create(response):
-    if response.method == "POST":
+    if (response.method == "POST"):
         form = CreateNewUser(response.POST)
 
         if form.is_valid():
@@ -23,11 +27,38 @@ def create(response):
             
             p = User(username=n,email=e,password=pwd)
             p.save()
-
+            return redirect("/login")
     else:
         form = CreateNewUser()
     return render(response, "main_app/create.html",{"form":form})
-  
+
+#login
+def user_login(request):
+    if request.method == "POST":
+        login_form = loginForm(request.POST)
+        if login_form.is_valid():
+            username = login_form.cleaned_data["username"]
+            password = login_form.cleaned_data["password"]
+            user = authenticate(username=username,password=password)
+            if user:
+                if user.is_active:
+                    login(request,user)
+                    return redirect("/") #redirect to desired page
+                else:#account is inactive
+                    return HttpResponse("Account is not active.")
+            else:
+                print("Someone tried to login and failed.")
+                print("They used username: {} and password: {}".format(username,password))
+                return render(request, "main_app/login.html", {"login_form":loginForm})
+    else:
+        return render(request, "main_app/login.html",{"login_form":loginForm})
+
+#logout
+def user_logout(request):
+        logout(request)
+        return redirect("/")
+
+
 #Drills
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
