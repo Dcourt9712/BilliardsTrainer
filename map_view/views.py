@@ -1,11 +1,26 @@
 from django.shortcuts import render, redirect, reverse
 from django.conf import settings
-
+# from django.contrib.gis.utils import GeoIP
 from .mixins import Directions
+
+'''
+Get user info & ip stuff
+'''
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
 '''
 Basic view for routing 
 '''
 def route(request):
+  # g = GeoIP() 
+  # lat,lng = g.lat_lon(get_client_ip(request))
+  # print(f'\n  {lat}\n  {lng}\n')
 
   context = {"google_api_key": settings.API_KEY}
   return render(request, 'map_view/route.html', context)

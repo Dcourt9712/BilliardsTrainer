@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('map_view/', include("map_view.urls", namespace="map_view")),
     path('', MA_views.welcome, name = 'welcome'),
+<<<<<<< HEAD
     
     #User Profile
     path("profile/", MA_views.profile, name="profile"),
@@ -35,6 +36,16 @@ urlpatterns = [
     path('login/', MA_views.user_login, name='login'),
     #User Logout
     path('logout/', MA_views.user_logout, name='logout'),
+=======
+
+    #PersistantData
+    path("<int:id>", MA_views.profile, name="profile"),
+    path("create/", MA_views.create, name="create"),
+    path('message-board/', MA_views.message_list, name='message_board'),
+    path('add-message/', MA_views.add_message, name='add_message'),
+    path('message-board/', MA_views.message_list, name='message_list'),
+
+>>>>>>> 79646b893e15b89938c1df3b40c98ded2016a0fa
     #Drills
     path('drills/',MA_views.drills,name ='drills'),
     path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),

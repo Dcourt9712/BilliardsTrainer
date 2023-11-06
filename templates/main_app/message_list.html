@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/message_board.css' %}">
+
+    <title>Message Board</title>
+</head>
+<body class="dark-green-bg">
+    <h1>Message Board</h1>
+    <ul>
+        {% for message in messages %}
+            <li>{{ message.author }} - {{ message.content }}</li>
+        {% empty %}
+            <li>No messages yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_message' %}">Add a message</a>
+    <a href="{% url 'welcome' %}" class="btn-back">Back to Main Menu</a>
+</body>
+</html>
