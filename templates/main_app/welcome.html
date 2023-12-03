@@ -37,10 +37,15 @@
           <span class = "menu-title">Find Local Club</span>
         </a>
         
-        <a href = "/login/" class = "menu-button" tabindex="5" draggable="false">
-          <span class = "menu-title">Login</span>
-        </a>
-
+        {% if user.is_authenticated %}
+          <a href = "/logout/" class = "menu-button" tabindex="5" draggable="false">
+            <span class = "menu-title">Logout</span>
+          </a>
+          {% else %}    
+          <a href = "/login" class = "menu-button" tabindex="5" draggable="false">
+            <span class = "menu-title">Login</span>
+          </a>
+        {% endif %}
         <!-- <a href = "create" class = "menu-button" tabindex="4" draggable="false">
           <span class = "menu-title">Create user</span>
         </a> -->

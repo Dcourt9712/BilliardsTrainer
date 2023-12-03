@@ -8,32 +8,28 @@ from .models import User, Stats, Message
 from .models import Drill_data
 
 # Create your views here.
-
-
-
 def welcome(request):
     return render(request, 'main_app/welcome.html')
 
 #DB
+@login_required(login_url='/login/')
 def profile(response, id):
     prof = User.objects.get(id=id)
     return render(response, "main_app/profile.html", {"prof":prof})
 
-def create(response):
-    if (response.method == "POST"):
-        form = CreateNewUser(response.POST)
+def create(request):
+    if (request.method == "POST"):
+        form = CreateNewUser(request.POST)
 
         if form.is_valid():
-            n = form.cleaned_data["username"]
-            e = form.cleaned_data["email"]
-            pwd = form.cleaned_data["password"]
-
-            p = User(username=n,email=e,password=pwd)
-            p.save()
+            New_User = form.save()
+            New_User.set_password(New_User.password)
+            New_User.save()
+            
             return redirect("/login")
     else:
         form = CreateNewUser()
-    return render(response, "main_app/create.html",{"form":form})
+    return render(request, "main_app/create.html",{"form":form})
 
 #login
 def user_login(request):
@@ -61,12 +57,14 @@ def user_logout(request):
         logout(request)
         return redirect("/")
 
+@login_required(login_url='/login/')
 def message_list(request):
     # Query the database for messages and pass them to the template
     messages = Message.objects.all()
     context = {'messages': messages}
     return render(request, 'main_app/message_list.html', context)
 
+@login_required(login_url='/login/')
 def add_message(request):
     if request.method == 'POST':
         form = MessageForm(request.POST)
@@ -83,7 +81,6 @@ def add_message(request):
 
 
 #Drills
-
 
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
