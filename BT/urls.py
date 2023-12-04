@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('map_view/', include("map_view.urls", namespace="map_view")),
     path('', MA_views.welcome, name = 'welcome'),
-    
+
     #User Profile
     path("profile/", MA_views.profile, name="profile"),
     #Create User account
@@ -41,6 +41,7 @@ urlpatterns = [
     path("create/", MA_views.create, name="create"),
     path('message-board/', MA_views.message_list, name='message_board'),
     path('add-message/', MA_views.add_message, name='add_message'),
+    path('message/<int:message_id>/delete/', MA_views.delete_message, name='delete_message'),
     path('message-board/', MA_views.message_list, name='message_list'),
 
     #Drills

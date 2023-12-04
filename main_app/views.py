@@ -25,7 +25,7 @@ def create(request):
             New_User = form.save()
             New_User.set_password(New_User.password)
             New_User.save()
-            
+
             return redirect("/login")
     else:
         form = CreateNewUser()
@@ -69,7 +69,7 @@ def add_message(request):
     if request.method == 'POST':
         form = MessageForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the message to the database
+            form.save(user=request.user)  # Pass the current user to the form's save method
             return redirect('message_list')  # Redirect to the message list page
 
     else:
@@ -77,6 +77,14 @@ def add_message(request):
 
     context = {'form': form}
     return render(request, 'main_app/message_form.html', context)
+
+
+@login_required(login_url='/login/')
+def delete_message(request, message_id):
+    message = get_object_or_404(Message, pk=message_id)
+    if message.is_author(request.user):
+        message.delete()
+    return redirect('message_list')
 
 
 
@@ -152,7 +160,7 @@ def corner(request):
 
         new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
         new_drill_data.save()
-    return render(request,'main_app/Drills/shotmaking/corner.html') 
+    return render(request,'main_app/Drills/shotmaking/corner.html')
 
 def train (request):
     if request.method == "POST":
@@ -163,7 +171,7 @@ def train (request):
         new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/train.html')
-           
+
 def follower(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -172,5 +180,4 @@ def follower(request):
 
         new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
         new_drill_data.save()
-    return render(request,'main_app/Drills/shotmaking/follower.html')   
-
+    return render(request,'main_app/Drills/shotmaking/follower.html')
