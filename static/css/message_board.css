@@ -93,6 +93,9 @@ a:hover {
 /* Style for the message content */
 .message-content {
   flex-grow: 1; /* Allow content to grow and take remaining space */
+  font-family: "NeoSansStdRegular", sans-serif; /* Set the desired font */
+  overflow-wrap: break-word; /* Allow the text to wrap within the container */
+  word-wrap: break-word; /* Fallback for older browsers */
 }
 
 /* Style for the delete button */
