@@ -15,10 +15,10 @@ def get_client_ip(request):
     return ip
 
 '''
-Basic view for routing 
+Basic view for routing
 '''
 def route(request):
-  # g = GeoIP() 
+  # g = GeoIP()
   # lat,lng = g.lat_lon(get_client_ip(request))
   # print(f'\n  {lat}\n  {lng}\n')
 
@@ -27,7 +27,7 @@ def route(request):
 
 
 '''
-Basic view for displaying a map 
+Basic view for displaying a map
 '''
 def map(request):
 

@@ -3,20 +3,33 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'css/message_board.css' %}">
-
-    <title>Message Board</title>
+  <title>Message Board</title>
 </head>
 <body class="dark-green-bg">
-    <h1>Message Board</h1>
-    <ul>
-        {% for message in messages %}
-            <li>{{ message.author }} - {{ message.content }}</li>
-        {% empty %}
-            <li>No messages yet.</li>
-        {% endfor %}
-    </ul>
+  <h1>Message Board</h1>
+  <ul>
+    {% for message in messages %}
+      <li class="message-container">
+        <div class="message-content">
+          {{ message.author }} - {% if message.content|length > 100 %}
+            {{ message.content|slice:":100" }}
+          {% else %}
+            {{ message.content }}
+          {% endif %}
+        </div>
+        {% if message.author == request.user %}
+          <form method="post" action="{% url 'delete_message' message.id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>No messages yet.</li>
+    {% endfor %}
+  </ul>
 
-    <a href="{% url 'add_message' %}">Add a message</a>
-    <a href="{% url 'welcome' %}" class="btn-back">Back to Main Menu</a>
+  <a href="{% url 'add_message' %}">Add a message</a>
+  <a href="{% url 'welcome' %}" class="btn-back">Back to Main Menu</a>
 </body>
 </html>

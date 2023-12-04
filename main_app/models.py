@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class User(models.Model):
     username = models.CharField(max_length=200, default="")
@@ -24,9 +25,12 @@ class Stats(models.Model):
         return self.drillsComplete
 
 class Message(models.Model):
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.author
+        return self.content
+
+    def is_author(self, user):
+        return self.author == user
