@@ -160,7 +160,7 @@ def mightyx_follow(request):
 def mightyx_draw(request):
     if request.method == "POST":
         amount_completed = request.POST["amount_completed"]
-        new_drill_data = Drill_data(username=request.user,drill_name="Mightyx_Stun",amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Mightyx_Draw",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/fundamentals/mightyx_draw.html')
 
