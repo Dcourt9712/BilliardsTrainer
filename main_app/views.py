@@ -89,95 +89,134 @@ def delete_message(request, message_id):
 
 
 #Drills
-
+@login_required(login_url='/login/')
 def drills(request):
     return render(request,'main_app/Drills/drills.html')
 
+@login_required(login_url='/login/')
 def Fundamentals(request):
     return render(request,'main_app/Drills/fundamentals.html')
-
+@login_required(login_url='/login/')
 def Shotmaking(request):
     return render(request,'main_app/Drills/Shotmaking.html')
-
+@login_required(login_url='/login/')
 def Kicking(request):
     return render(request,'main_app/Drills/kicking.html')
 
+@login_required(login_url='/login/')
 def Banking(request):
     return render(request,'main_app/Drills/banking.html')
 
+@login_required(login_url='/login/')
 def Safety(request):
     return render(request,'main_app/Drills/Safety.html')
 
+@login_required(login_url='/login/')
 def Jumping(request):
     return render(request,'main_app/Drills/Jumping.html')
 #fundamentals
+
+@login_required(login_url='/login/')
 def stop(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Stop",amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/fundamentals/stop.html')
 
+@login_required(login_url='/login/')
 def follow(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Follow",amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/fundamentals/follow.html')
 
+@login_required(login_url='/login/')
 def draw(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Draw",amount_completed=amount_completed)
+        new_drill_data.save()
     return render(request,'main_app/Drills/fundamentals/draw.html')
+
+@login_required(login_url='/login/')
+def mightyx_stun(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Mightyx_Stun",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/fundamentals/mightyx_stun.html')
+
+@login_required(login_url='/login/')
+def mightyx_follow(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Mightyx_Follow",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/fundamentals/mightyx_follow.html')
+
+@login_required(login_url='/login/')
+def mightyx_draw(request):
+    if request.method == "POST":
+        amount_completed = request.POST["amount_completed"]
+        new_drill_data = Drill_data(username=request.user,drill_name="Mightyx_Stun",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/fundamentals/mightyx_draw.html')
+
+    
 
 
 #shotmaking
+@login_required(login_url='/login/')
 def mill(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
         amount_completed = request.POST["amount_completed"]
-
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="The Mill",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/mill.html')
 
+@login_required(login_url='/login/')
 def everest(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
         amount_completed = request.POST["amount_completed"]
-
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Everest",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/everest.html')
 
+@login_required(login_url='/login/')
 def ladder(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
         amount_completed = request.POST["amount_completed"]
 
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Ladder",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/ladder.html')
 
+@login_required(login_url='/login/')
 def corner(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
         amount_completed = request.POST["amount_completed"]
 
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Corner",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/corner.html')
 
+@login_required(login_url='/login/')
 def train (request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
         amount_completed = request.POST["amount_completed"]
 
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Train",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/train.html')
 
+@login_required(login_url='/login/')
 def follower(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        drill_name = request.POST["drill_name"]
+      
         amount_completed = request.POST["amount_completed"]
 
-        new_drill_data = Drill_data(username=username,drill_name=drill_name,amount_completed=amount_completed)
+        new_drill_data = Drill_data(username=request.user,drill_name="Follower",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/follower.html')
