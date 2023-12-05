@@ -43,8 +43,6 @@
             <div class="form-container" >
                <form method="post" action="">
                 {% csrf_token %}
-                <input type="text" class="field" placeholder="Username" name="username">
-                <input type="text" class="field" placeholder="Drill Name" name="drill_name">
                 <input type="number" class="field" placeholder="Amount" name="amount_completed">
                 <button type="submit" name="save">save drill</button>
                </form>
