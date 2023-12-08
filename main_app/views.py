@@ -221,3 +221,66 @@ def follower(request):
         new_drill_data = Drill_data(username=request.user,drill_name="Follower",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/follower.html')
+
+@login_required(login_url='/login/')
+def one_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="One_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/one_rail_kick.html')
+
+
+@login_required(login_url='/login/')
+def two_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Two_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/two_rail_kick.html')
+
+@login_required(login_url='/login/')
+def three_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Three_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/three_rail_kick.html')
+
+@login_required(login_url='/login/')
+def kicking1(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking1",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking1.html')
+
+@login_required(login_url='/login/')
+def kicking2(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking2",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking2.html')
+
+
+@login_required(login_url='/login/')
+def kicking3(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking3",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking3.html')
+

@@ -63,7 +63,14 @@ urlpatterns = [
     path('drills/shotmaking/ladder', MA_views.ladder,name ='ladder'),
     path('drills/shotmaking/corner', MA_views.corner,name ='corner'),
     path('drills/shotmaking/train', MA_views.train,name ='train'),
-    path('drills/shotmaking/follower', MA_views.follower,name ='follower')
+    path('drills/shotmaking/follower', MA_views.follower,name ='follower'),
+    path('drills/kicking/one_rail_kick', MA_views.one_rail_kick,name ='one_rail_kick'),
+    path('drills/kicking/two_rail_kick', MA_views.two_rail_kick,name ='two_rail_kick'),
+    path('drills/kicking/three_rail_kick', MA_views.three_rail_kick,name ='three_rail_kick'),
+    path('drills/kicking/kicking1', MA_views.kicking1,name ='kicking1'),
+    path('drills/kicking/kicking2', MA_views.kicking2,name ='kicking2'),
+    path('drills/kicking/kicking3', MA_views.kicking3,name ='kicking3'),
+
 ]
 
 if settings.DEBUG:
