@@ -58,18 +58,27 @@ urlpatterns = [
     path('drills/fundamentals/mightyx_stun', MA_views.mightyx_stun,name ='mightyx_stun'),
     path('drills/fundamentals/mightyx_follow', MA_views.mightyx_follow,name ='mightyx_follow'),
     path('drills/fundamentals/mightyx_draw', MA_views.mightyx_draw,name ='mightyx_draw'),
+    
     path('drills/shotmaking/mill', MA_views.mill,name ='mill'),
     path('drills/shotmaking/everest', MA_views.everest,name ='everest'),
     path('drills/shotmaking/ladder', MA_views.ladder,name ='ladder'),
     path('drills/shotmaking/corner', MA_views.corner,name ='corner'),
     path('drills/shotmaking/train', MA_views.train,name ='train'),
     path('drills/shotmaking/follower', MA_views.follower,name ='follower'),
+
     path('drills/kicking/one_rail_kick', MA_views.one_rail_kick,name ='one_rail_kick'),
     path('drills/kicking/two_rail_kick', MA_views.two_rail_kick,name ='two_rail_kick'),
     path('drills/kicking/three_rail_kick', MA_views.three_rail_kick,name ='three_rail_kick'),
     path('drills/kicking/kicking1', MA_views.kicking1,name ='kicking1'),
     path('drills/kicking/kicking2', MA_views.kicking2,name ='kicking2'),
     path('drills/kicking/kicking3', MA_views.kicking3,name ='kicking3'),
+
+    path('drills/banking/one_rail_bank', MA_views.one_rail_bank,name ='one_rail_bank'),
+    path('drills/banking/two_rail_bank', MA_views.two_rail_bank,name ='two_rail_bank'),
+    path('drills/banking/three_rail_bank', MA_views.three_rail_bank,name ='three_rail_bank'),
+    path('drills/banking/four_rail_bank', MA_views.four_rail_bank,name ='four_rail_bank'),
+    path('drills/banking/banking1', MA_views.banking1,name ='banking1'),
+    path('drills/banking/banking2', MA_views.banking2,name ='banking2'),
 
 ]
 
