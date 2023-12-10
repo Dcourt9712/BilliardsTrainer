@@ -7,6 +7,7 @@
 # from unittest.mock import patch
 
 from django.contrib.auth.models import User
+from main_app.models import Drill_data
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth import authenticate, login
@@ -16,11 +17,12 @@ class ViewTest(TestCase):
     '''Class for Views'''
 
     def setUp(self):
-        self.user = User.objects.create(
+        self.user = user = User.objects.create(
             username = "Alex",
             email = "Alex@test.com",
             password = "test"
         )
+
         self.client.force_login(user = self.user)
 
     def test_models_smoke_test(self):
