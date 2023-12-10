@@ -80,6 +80,21 @@ urlpatterns = [
     path('drills/banking/banking1', MA_views.banking1,name ='banking1'),
     path('drills/banking/banking2', MA_views.banking2,name ='banking2'),
 
+    path('drills/safety/safety1', MA_views.safety1,name ='safety1'),
+    path('drills/safety/safety2', MA_views.safety2,name ='safety2'),
+    path('drills/safety/safety3', MA_views.safety3,name ='safety3'),
+    path('drills/safety/safety4', MA_views.safety4,name ='safety4'),
+    path('drills/safety/safety5', MA_views.safety5,name ='safety5'),
+    path('drills/safety/safety6', MA_views.safety6,name ='safety6'),
+
+    path('drills/jumping/jumping1', MA_views.jumping1,name ='jumping1'),
+    path('drills/jumping/jumping2', MA_views.jumping2,name ='jumping2'),
+    path('drills/jumping/jumping3', MA_views.jumping3,name ='jumping3'),
+    path('drills/jumping/jumping4', MA_views.jumping4,name ='jumping4'),
+    path('drills/jumping/jumping5', MA_views.jumping5,name ='jumping5'),
+    path('drills/jumping/jumping6', MA_views.jumping6,name ='jumping6'),
+
+
 ]
 
 if settings.DEBUG:
