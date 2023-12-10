@@ -60,12 +60,12 @@ class ViewTest(TestCase):
     def test_Safety(self):
         response = self.client.post(reverse('Safety'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main_app/Drills/Safety.html')
+        self.assertTemplateUsed(response, 'main_app/Drills/safety.html')
 
     def test_Jumping(self):
         response = self.client.post(reverse('Jumping'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main_app/Drills/Jumping.html')
+        self.assertTemplateUsed(response, 'main_app/Drills/jumping.html')
 
 
 class createTestCase(TestCase):
