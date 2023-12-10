@@ -139,5 +139,125 @@ class TestUrls(TestCase):
     
     def test_url_logout(self):
         """Test access to the root url"""
+        response = self.client.get(reverse("three_rail_kick"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
         response = self.client.get(reverse("logout"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("one_rail_kick"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("two_rail_kick"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("kicking1"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("kicking2"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("kicking3"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("one_rail_bank"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("two_rail_bank"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("three_rail_bank"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("four_rail_bank"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("banking1"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("banking2"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety1"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety2"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety3"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety4"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety5"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("safety6"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping1"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping2"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping3"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping4"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping5"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_url_logout(self):
+        """Test access to the root url"""
+        response = self.client.get(reverse("jumping6"))
         self.assertEqual(response.status_code, 302)

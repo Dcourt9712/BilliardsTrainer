@@ -7,6 +7,7 @@
 # from unittest.mock import patch
 
 from django.contrib.auth.models import User
+from main_app.models import Drill_data
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth import authenticate, login
@@ -16,11 +17,12 @@ class ViewTest(TestCase):
     '''Class for Views'''
 
     def setUp(self):
-        self.user = User.objects.create(
+        self.user = user = User.objects.create(
             username = "Alex",
             email = "Alex@test.com",
             password = "test"
         )
+
         self.client.force_login(user = self.user)
 
     def test_models_smoke_test(self):
@@ -60,12 +62,12 @@ class ViewTest(TestCase):
     def test_Safety(self):
         response = self.client.post(reverse('Safety'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main_app/Drills/Safety.html')
+        self.assertTemplateUsed(response, 'main_app/Drills/safety.html')
 
     def test_Jumping(self):
         response = self.client.post(reverse('Jumping'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main_app/Drills/Jumping.html')
+        self.assertTemplateUsed(response, 'main_app/Drills/jumping.html')
 
 
 class createTestCase(TestCase):
