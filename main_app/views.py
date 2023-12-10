@@ -112,11 +112,11 @@ def Banking(request):
 
 @login_required(login_url='/login/')
 def Safety(request):
-    return render(request,'main_app/Drills/Safety.html')
+    return render(request,'main_app/Drills/safety.html')
 
 @login_required(login_url='/login/')
 def Jumping(request):
-    return render(request,'main_app/Drills/Jumping.html')
+    return render(request,'main_app/Drills/jumping.html')
 #fundamentals
 
 @login_required(login_url='/login/')
@@ -223,3 +223,251 @@ def follower(request):
         new_drill_data = Drill_data(username=request.user,drill_name="Follower",amount_completed=amount_completed)
         new_drill_data.save()
     return render(request,'main_app/Drills/shotmaking/follower.html')
+
+#kicking
+@login_required(login_url='/login/')
+def one_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="One_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/one_rail_kick.html')
+
+
+@login_required(login_url='/login/')
+def two_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Two_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/two_rail_kick.html')
+
+@login_required(login_url='/login/')
+def three_rail_kick(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Three_rail_kick",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/three_rail_kick.html')
+
+@login_required(login_url='/login/')
+def kicking1(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking1",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking1.html')
+
+@login_required(login_url='/login/')
+def kicking2(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking2",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking2.html')
+
+
+@login_required(login_url='/login/')
+def kicking3(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Kicking3",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/kicking/kicking3.html')
+
+#banking
+@login_required(login_url='/login/')
+def one_rail_bank(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="One_rail_bank",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/one_rail_bank.html')
+
+@login_required(login_url='/login/')
+def two_rail_bank(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Two_rail_bank",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/two_rail_bank.html')
+
+@login_required(login_url='/login/')
+def three_rail_bank(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Three_rail_bank",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/three_rail_bank.html')
+
+@login_required(login_url='/login/')
+def four_rail_bank(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Four_rail_bank",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/four_rail_bank.html')
+
+@login_required(login_url='/login/')
+def banking1(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Banking1",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/banking1.html')
+
+@login_required(login_url='/login/')
+def banking2(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Banking2",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/banking/banking2.html')
+
+
+@login_required(login_url='/login/')
+def safety1(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety1",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety1.html')
+
+@login_required(login_url='/login/')
+def safety2(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety2",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety2.html')
+
+@login_required(login_url='/login/')
+def safety3(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety3",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety3.html')
+
+
+@login_required(login_url='/login/')
+def safety4(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety4",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety4.html')
+
+@login_required(login_url='/login/')
+def safety5(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety5",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety5.html')
+
+@login_required(login_url='/login/')
+def safety6(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="Safety6",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/safety/safety6.html')
+
+
+@login_required(login_url='/login/')
+def jumping1(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping1",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping1.html')
+
+@login_required(login_url='/login/')
+def jumping2(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping2",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping2.html')
+
+@login_required(login_url='/login/')
+def jumping3(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping3",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping3.html')
+
+
+@login_required(login_url='/login/')
+def jumping4(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping4",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping4.html')
+
+@login_required(login_url='/login/')
+def jumping5(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping5",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping5.html')
+
+@login_required(login_url='/login/')
+def jumping6(request):
+    if request.method == "POST":
+      
+        amount_completed = request.POST["amount_completed"]
+
+        new_drill_data = Drill_data(username=request.user,drill_name="jumping6",amount_completed=amount_completed)
+        new_drill_data.save()
+    return render(request,'main_app/Drills/jumping/jumping6.html')
