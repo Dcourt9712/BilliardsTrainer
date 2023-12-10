@@ -1,0 +1,24 @@
+
+<!-- At the top of your page add load static -->
+{% load static %}
+<link rel="stylesheet" href ="{%static 'css/user_stat.css' %}">
+<!-- In the body of the HTML page add this and continue adding all Fields. I have provided three example below -->
+ <h1 class='list'>User stats</h1>
+    <body>
+        <table class="center">
+            <thead>
+                <th>Username</th>
+                <th>Drill Name</th>
+                <th>Amount</th>
+            </thead>
+            {% for k in context%}
+                <tr>
+                    <td>{{k.username}}</td>
+                    <td>{{k.drill_name}}</td>
+                    <td>{{k.amount_completed}}</td>
+                
+                </tr>
+            {% endfor %}
+        </table>
+ </body>
+      

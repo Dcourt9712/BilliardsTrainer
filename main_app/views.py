@@ -59,6 +59,11 @@ def user_logout(request):
         return redirect("/")
 
 @login_required(login_url='/login/')
+def user_stats(request):
+    context = Drill_data.objects.filter(username=request.user)
+    return render(request,'main_app/user_stat.html', {'context':context} )
+
+@login_required(login_url='/login/')
 def message_list(request):
     # Query the database for messages and pass them to the template
     messages = Message.objects.all()

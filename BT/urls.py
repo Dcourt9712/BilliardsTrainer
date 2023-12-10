@@ -44,6 +44,8 @@ urlpatterns = [
     path('message/<int:message_id>/delete/', MA_views.delete_message, name='delete_message'),
     path('message-board/', MA_views.message_list, name='message_list'),
 
+    #User stats
+    path('stats/',MA_views.user_stats,name ='user_stats'),
     #Drills
     path('drills/',MA_views.drills,name ='drills'),
     path('drills/Fundamentals', MA_views.Fundamentals,name ='Fundamentals'),
