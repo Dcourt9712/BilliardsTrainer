@@ -110,11 +110,11 @@ def Banking(request):
 
 @login_required(login_url='/login/')
 def Safety(request):
-    return render(request,'main_app/Drills/Safety.html')
+    return render(request,'main_app/Drills/safety.html')
 
 @login_required(login_url='/login/')
 def Jumping(request):
-    return render(request,'main_app/Drills/Jumping.html')
+    return render(request,'main_app/Drills/jumping.html')
 #fundamentals
 
 @login_required(login_url='/login/')
