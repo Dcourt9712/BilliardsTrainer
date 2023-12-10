@@ -97,9 +97,11 @@ def drills(request):
 @login_required(login_url='/login/')
 def Fundamentals(request):
     return render(request,'main_app/Drills/fundamentals.html')
+
 @login_required(login_url='/login/')
 def Shotmaking(request):
     return render(request,'main_app/Drills/Shotmaking.html')
+
 @login_required(login_url='/login/')
 def Kicking(request):
     return render(request,'main_app/Drills/kicking.html')

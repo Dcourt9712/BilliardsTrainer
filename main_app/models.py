@@ -9,12 +9,17 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+    
+    def give_email(self):
+        return self.email
 
 class Drill_data(models.Model):
     username = models.CharField(max_length=20)
     drill_name = models.CharField(max_length=20)
     amount_completed = models.IntegerField(max_length=20)
 
+    def __int__(self):
+        return self.amount_completed
 
 class Stats(models.Model):
     userStats = models.ForeignKey(User, on_delete=models.CASCADE)

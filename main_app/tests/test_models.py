@@ -5,65 +5,46 @@
 # ./manage.py test API
 # '''
 
-# from django.contrib.auth.models import User
-# from django.test import TestCase
+from main_app.models import User
+from main_app.models import Stats
+from main_app.models import Drill_data
+from django.test import TestCase
 
 # from API.models import CreateRecipe, RecipeSearch
 
 
-# class ModelTest(TestCase):
-#     '''
-#     Tests model saving functionality for models found in models.py
-#     '''
+class ModelTest(TestCase):
+    '''
+    Tests model saving functionality for models found in models.py
+    '''
+    def setUp(self):
+        '''Global setup to create a user account'''
+        self.user = user = User.objects.create(
+            username="Jake",
+            email="Jake@test.com",
+            password="test")
+        
+        self.data = Stats.objects.create(
+            userStats = user,
+            drillsComplete = 4
+        )
+        self.drill = Drill_data.objects.create(
+            username = user.username,
+            amount_completed = 4
+        )
 
-#     def setUp(self) -> None:
-#         '''Global setup to create a user account'''
-#         self.user = User.objects.create_user(
-#             username="Jake",
-#             password="test",
-#             email="test@test.com")
-#         self.client.force_login(user=self.user)
-#         super().setUp()
+    def test_models_smoke_test(self):
+        '''smoke test'''
+        self.assertEqual(1, 1) 
 
-#     def create_recipe_search(self):
-#         '''Creates a simple RecipeSearch object'''
-#         return RecipeSearch.objects.create(Recipe_Name="spaghetti")
+    def test_name_return(self):
+        self.assertEqual("Jake", self.user.__str__())
 
-#     def create_custom_recipe(self):
-#         '''Simulates a user-created recipe'''
-#         return CreateRecipe.objects.create(Create_RecipeName="Test created recipe",
-#                                            Create_Ingrediants="123 ingrediants",
-#                                            Create_Meal_Type="Dinner",
-#                                            Create_Health_Type="DASH",
-#                                            Create_Diet="Balanced",
-#                                            Create_Calories="123000",
-#                                            Create_Time="45 minutes",
-#                                            Create_Instruct="1. bake 2. eat",
-#                                            Upload_Image="/Users/jakewest/Desktop/profilePic.jpg")
+    def test_email_return(self):
+        self.assertEqual("Jake@test.com", self.user.give_email())
 
-#     def test_models_smoke_test(self):
-#         '''smoke test'''
-#         self.assertEqual(1, 1)
-
-#     def test_save_recipe_search(self):
-#         '''Ensure that a users search is handled correctly'''
-#         recipe = self.create_recipe_search()
-#         self.assertTrue(isinstance(recipe, RecipeSearch))
-
-#     def test_save_user_created_recipe(self):
-#         '''Tests that a user created recipe is saved correctly'''
-#         recipe = self.create_custom_recipe()
-#         self.assertTrue(isinstance(recipe, CreateRecipe))
-
-#     def test_create_user(self):
-#         '''
-#         Tests that a users bio and profile picture are updated correctly.
-#         The user credentials are declared in setup()
-#         '''
-#         # check that user was created
-#         self.assertEqual(User.objects.count(), 1)
-
-#         # check that the users credentials are accurate
-#         self.assertEqual(self.user.username, "Jake")
-#         self.assertEqual(self.user.email, "test@test.com")
-#         self.assertTrue(self.user.check_password('test'))
+    def test_stats_return(self):
+        self.assertEqual(4,self.data.__int__())
+        
+    def test_data_return(self):
+        self.assertEqual(4,self.drill.__int__())
